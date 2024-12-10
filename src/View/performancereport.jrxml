@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cfcb09c-c2d9-429b-b417-70158c1a357f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT p.P_ID, p.P_name, p.P_difficulty, p.P_time, pp.P_performance, at.T_ID FROM projects p LEFT JOIN projectperformance pp ON p.P_ID = pp.P_ID LEFT JOIN assignteam at ON p.P_ID = at.P_ID;]]>
+	</queryString>
+	<field name="P_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="P_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="P_difficulty" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="P_time" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="P_performance" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="T_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="26" width="555" height="39" uuid="dd31cb00-8309-4d71-871b-8602bf0ca8fc"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="b1f9a3d3-b62e-4b64-93fd-caa0b56bda97"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Project ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="0" width="92" height="20" uuid="16481837-2e2a-4f02-a1bf-cd7e32503a3b"/>
+				<text><![CDATA[Project Name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="0" width="92" height="20" uuid="9cf37980-3087-465e-b354-bd874039d8c7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Project difficulty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="92" height="20" uuid="9fe8a8f3-e07a-4c95-91be-87867d66669a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Time Period]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="0" width="92" height="20" uuid="06297d80-a0e5-43a0-b18a-84af6d76cfad"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Project Performance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="92" height="20" uuid="c572b74c-1567-4985-b9a6-6cc98b3c3286"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Team ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="92" height="20" uuid="1b72f669-77e1-4cf2-9c3b-84d48c7b5bb9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{P_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="92" height="20" uuid="03186945-2283-42da-a976-8a7504bdf984"/>
+				<textFieldExpression><![CDATA[$F{P_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="92" height="20" uuid="1a2ab585-d711-48bb-a146-c9ed72955392"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{P_difficulty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="92" height="20" uuid="4d361482-9f7a-43cf-ad14-9dd09dc01919"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{P_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="0" width="92" height="20" uuid="67592824-16f4-4cd4-aff6-b3882337a75c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{P_performance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="92" height="20" uuid="1f6c768f-b800-42d1-87a0-757a5e295cf1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{T_ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
